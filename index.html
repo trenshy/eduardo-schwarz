@@ -4,480 +4,340 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Eduardo M. Schwarz — Analista de Segurança Ofensiva</title>
-<meta name="description" content="Currículo — Analista de Segurança Ofensiva · Red Team / Pentest">
+<meta name="description" content="Currículo de Eduardo Schwarz — Analista de Segurança Ofensiva · Red Team e Pentest">
 <link rel="icon" href="assets/favicon.png" type="image/png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root {
-    --bg: #050906;
-    --bg-2: #07100a;
-    --panel: #0b130c;
-    --panel-2: #0f1a11;
-    --line: #1c2e1f;
-    --line-soft: #152016;
-    --accent: #00e676;
-    --accent-2: #69f0ae;
-    --text: #e6f2e8;
-    --text-2: #a9c7ad;
-    --muted: #6f8a73;
-    --radius: 12px;
-    --glow: 0 0 32px rgba(0, 230, 118, .18);
-    --font-display: 'Space Grotesk', 'Inter', sans-serif;
-    --font-body: 'Inter', system-ui, sans-serif;
-    --font-mono: 'JetBrains Mono', monospace;
+    --bg: #0c100e;
+    --bg-alt: #0f1412;
+    --surface: #141a17;
+    --border: #232d28;
+    --border-soft: #1a231f;
+    --accent: #3ddc7f;
+    --accent-dim: #2aa862;
+    --text: #e8ece9;
+    --text-2: #a8b3ad;
+    --muted: #6d7a73;
+    --mono: ui-monospace, "SF Mono", "Cascadia Code", Menlo, Consolas, monospace;
   }
 
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+  * { box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
 
   body {
+    margin: 0;
     background: var(--bg);
     color: var(--text);
-    font-family: var(--font-body);
+    font-family: "Inter", system-ui, -apple-system, sans-serif;
     font-size: 15px;
-    line-height: 1.6;
-    overflow-x: hidden;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
   }
 
   a { color: inherit; text-decoration: none; }
-  ul { list-style: none; }
+  ul { margin: 0; padding: 0; list-style: none; }
+  img { display: block; max-width: 100%; }
 
-  .wrap { max-width: 1160px; margin: 0 auto; padding: 0 24px; }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
 
   /* ---------- NAV ---------- */
   .nav {
     position: sticky;
     top: 0;
     z-index: 50;
-    background: rgba(5, 9, 6, .8);
-    backdrop-filter: blur(12px);
-    border-bottom: 1px solid var(--line-soft);
+    background: rgba(12, 16, 14, .92);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--border-soft);
   }
-  .nav-inner {
+  .nav .wrap {
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    height: 62px;
-    gap: 16px;
+    height: 56px;
   }
-  .brand {
-    font-family: var(--font-display);
-    font-weight: 700;
-    letter-spacing: .04em;
-    font-size: 1.05rem;
-  }
-  .brand .mark {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--accent);
-    font-family: var(--font-mono);
-    font-size: .72rem;
-    border: 1px solid var(--accent);
-    border-radius: 5px;
-    padding: 2px 6px;
-    margin-right: 8px;
-    vertical-align: 2px;
-  }
-  .brand b { color: var(--accent); font-weight: 700; }
-  .nav-links { display: flex; gap: 4px; }
+  .nav-right { display: flex; align-items: center; gap: 6px; }
+  .nav-links { display: flex; gap: 2px; }
   .nav-links a {
-    font-family: var(--font-mono);
-    font-size: .72rem;
-    letter-spacing: .06em;
+    font-size: .82rem;
     color: var(--text-2);
-    padding: 8px 12px;
-    border-radius: 6px;
-    transition: .2s;
-  }
-  .nav-links a:hover { color: var(--accent); background: rgba(0, 230, 118, .08); }
-  .nav-right { display: flex; align-items: center; gap: 14px; }
-  .lang-toggle {
-    display: inline-flex;
-    align-items: center;
-    gap: 4px;
-    font-family: var(--font-mono);
-    font-size: .7rem;
-    letter-spacing: .06em;
-    color: var(--muted);
-    background: none;
-    border: 1px solid var(--line);
-    border-radius: 6px;
     padding: 6px 10px;
+    border-radius: 5px;
+  }
+  .nav-links a:hover { color: var(--text); background: rgba(255, 255, 255, .05); }
+  .lang {
+    margin-left: 8px;
+    padding: 5px 9px;
+    font: inherit;
+    font-size: .74rem;
+    font-family: var(--mono);
+    color: var(--muted);
+    background: transparent;
+    border: 1px solid var(--border);
+    border-radius: 5px;
     cursor: pointer;
   }
-  .lang-toggle .opt { padding: 1px 3px; transition: .15s; }
-  .lang-toggle .opt.active { color: var(--accent); font-weight: 600; }
-  .lang-toggle .sep { color: var(--line); }
+  .lang:hover { color: var(--text); border-color: var(--muted); }
+  .lang .opt { padding: 0 2px; }
+  .lang .opt.on { color: var(--accent); font-weight: 600; }
+  .lang .sep { color: var(--border); padding: 0 1px; }
 
   /* ---------- HERO ---------- */
   .hero {
-    position: relative;
-    padding: 96px 0 84px;
+    padding: 76px 0 60px;
     text-align: center;
-    overflow: hidden;
-    border-bottom: 1px solid var(--line-soft);
-    background:
-      radial-gradient(720px 420px at 50% -10%, rgba(0, 230, 118, .12), transparent 65%),
-      var(--bg);
+    border-bottom: 1px solid var(--border-soft);
   }
-  .hero::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background-image:
-      linear-gradient(rgba(0, 230, 118, .04) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(0, 230, 118, .04) 1px, transparent 1px);
-    background-size: 44px 44px;
-    mask-image: radial-gradient(ellipse 70% 60% at 50% 0%, #000 30%, transparent 75%);
-    pointer-events: none;
-  }
-  .hero .tag {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    font-family: var(--font-mono);
-    font-size: .72rem;
-    letter-spacing: .14em;
+  .hero .eyebrow {
+    font-family: var(--mono);
+    font-size: .74rem;
+    letter-spacing: .1em;
     text-transform: uppercase;
     color: var(--accent);
-    border: 1px solid rgba(0, 230, 118, .3);
-    background: rgba(0, 230, 118, .06);
-    padding: 7px 16px;
-    border-radius: 999px;
-    margin-bottom: 26px;
-    position: relative;
-  }
-  .hero .tag .dot {
-    width: 7px; height: 7px; border-radius: 50%;
-    background: var(--accent);
-    box-shadow: 0 0 10px var(--accent);
+    margin-bottom: 18px;
   }
   .hero h1 {
-    font-family: var(--font-display);
-    font-size: clamp(2.4rem, 6vw, 4.2rem);
+    margin: 0 0 16px;
+    font-size: clamp(2rem, 5vw, 3.1rem);
     font-weight: 700;
-    line-height: 1.05;
-    letter-spacing: -.01em;
-    margin-bottom: 18px;
-    position: relative;
-  }
-  .hero h1 .accent {
-    color: var(--accent);
-    text-shadow: 0 0 34px rgba(0, 230, 118, .4);
-  }
-  .hero .sub {
-    font-size: 1.12rem;
-    color: var(--text-2);
-    max-width: 640px;
-    margin: 0 auto 30px;
-    position: relative;
-  }
-  .hero-actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin-bottom: 48px; position: relative; }
-  .btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    font-family: var(--font-mono);
-    font-size: .76rem;
-    font-weight: 600;
-    letter-spacing: .08em;
-    padding: 12px 22px;
-    border-radius: 8px;
-    transition: .2s;
-  }
-  .btn-primary { background: var(--accent); color: #03130a; }
-  .btn-primary:hover { background: var(--accent-2); box-shadow: var(--glow); }
-  .btn-ghost { border: 1px solid var(--line); color: var(--text); }
-  .btn-ghost:hover { border-color: var(--accent); color: var(--accent); }
-
-  .hero-stats {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 12px;
-    max-width: 480px;
-    margin: 0 auto;
-    position: relative;
-  }
-  .hero-stats .stat {
-    background: var(--panel);
-    border: 1px solid var(--line);
-    border-radius: var(--radius);
-    padding: 18px 10px;
-  }
-  .hero-stats .stat b {
-    display: block;
-    font-family: var(--font-display);
-    font-size: 1.7rem;
-    color: var(--accent);
-    line-height: 1;
-  }
-  .hero-stats .stat span {
-    font-family: var(--font-mono);
-    font-size: .66rem;
-    letter-spacing: .08em;
-    color: var(--muted);
-    text-transform: uppercase;
-    display: block;
-    margin-top: 8px;
-  }
-
-  /* ---------- SECTIONS ---------- */
-  section { padding: 80px 0; }
-  .section-head { margin-bottom: 44px; }
-  .section-head .kicker {
-    font-family: var(--font-mono);
-    font-size: .72rem;
-    letter-spacing: .2em;
-    text-transform: uppercase;
-    color: var(--accent);
-    display: block;
-    margin-bottom: 10px;
-  }
-  .section-head h2 {
-    font-family: var(--font-display);
-    font-size: clamp(1.6rem, 4vw, 2.2rem);
-    font-weight: 700;
-    letter-spacing: -.01em;
+    letter-spacing: -.02em;
     line-height: 1.1;
   }
-
-  .alt { background: var(--bg-2); border-block: 1px solid var(--line-soft); }
-
-  /* ---------- ABOUT ---------- */
-  .about-grid { display: grid; grid-template-columns: 1.4fr 1fr; gap: 48px; align-items: center; }
-  .about-grid p { color: var(--text-2); margin-bottom: 14px; }
-  .focus-card {
-    background: var(--panel);
-    border: 1px solid var(--line);
-    border-radius: var(--radius);
-    padding: 26px;
+  .hero h1 em { font-style: normal; color: var(--accent); }
+  .hero .lead {
+    margin: 0 auto 28px;
+    max-width: 620px;
+    font-size: 1.05rem;
+    color: var(--text-2);
   }
-  .focus-card h3 { font-family: var(--font-mono); font-size: .72rem; letter-spacing: .16em; color: var(--accent); text-transform: uppercase; margin-bottom: 16px; }
-  .focus-card ul li {
+  .actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
+  .btn {
+    display: inline-block;
+    padding: 10px 18px;
+    font-size: .88rem;
+    font-weight: 600;
+    border-radius: 6px;
+    border: 1px solid transparent;
+    transition: background .15s, border-color .15s, color .15s;
+  }
+  .btn-primary { background: var(--accent); color: #08210f; }
+  .btn-primary:hover { background: #54e690; }
+  .btn-ghost { border-color: var(--border); color: var(--text); }
+  .btn-ghost:hover { border-color: var(--accent); color: var(--accent); }
+
+  /* ---------- SEÇÕES ---------- */
+  section { padding: 64px 0; }
+  .alt { background: var(--bg-alt); border-block: 1px solid var(--border-soft); }
+
+  .head { margin-bottom: 34px; }
+  .head .kicker {
+    display: block;
+    font-family: var(--mono);
+    font-size: .72rem;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 8px;
+  }
+  .head h2 {
+    margin: 0;
+    font-size: clamp(1.4rem, 3vw, 1.85rem);
+    font-weight: 700;
+    letter-spacing: -.015em;
+  }
+
+  /* ---------- SOBRE ---------- */
+  .about { display: grid; grid-template-columns: 1.7fr 1fr; gap: 44px; }
+  .about p { margin: 0 0 14px; color: var(--text-2); }
+  .about p:last-child { margin-bottom: 0; }
+
+  .facts { margin: 0; border-top: 1px solid var(--border); }
+  .facts div {
     display: flex;
     justify-content: space-between;
-    gap: 12px;
-    padding: 10px 0;
-    border-bottom: 1px solid var(--line-soft);
-    font-size: .88rem;
+    gap: 14px;
+    padding: 11px 0;
+    border-bottom: 1px solid var(--border-soft);
+    font-size: .87rem;
   }
-  .focus-card ul li:last-child { border-bottom: 0; }
-  .focus-card ul li span { color: var(--muted); }
-  .focus-card ul li b { color: var(--text); font-weight: 600; text-align: right; }
+  .facts dt { color: var(--muted); }
+  .facts dd { margin: 0; font-weight: 600; text-align: right; }
 
-  /* ---------- EXPERIENCE ---------- */
+  /* ---------- EXPERIÊNCIA ---------- */
   .timeline { position: relative; }
-  .tl-item { position: relative; padding: 0 0 36px 32px; }
-  .tl-item:last-child { padding-bottom: 0; }
-  .tl-item::before {
-    content: '';
+  .job { position: relative; padding: 0 0 30px 26px; }
+  .job:last-child { padding-bottom: 0; }
+  .job::before {
+    content: "";
     position: absolute;
-    left: 7px;
-    top: 8px;
+    left: 4px;
+    top: 9px;
     bottom: -4px;
-    width: 2px;
-    background: var(--line);
+    width: 1px;
+    background: var(--border);
   }
-  .tl-item:last-child::before { display: none; }
-  .tl-item::after {
-    content: '';
+  .job:last-child::before { display: none; }
+  .job::after {
+    content: "";
     position: absolute;
-    left: 2px;
+    left: 0;
     top: 6px;
-    width: 12px;
-    height: 12px;
+    width: 9px;
+    height: 9px;
     border-radius: 50%;
-    background: var(--bg);
-    border: 2px solid var(--accent);
-    box-shadow: 0 0 0 4px rgba(0, 230, 118, .12);
+    background: var(--accent);
   }
-  .tl-card {
-    background: var(--panel);
-    border: 1px solid var(--line);
-    border-radius: var(--radius);
-    padding: 22px 26px;
-    transition: .25s;
+  .job .period {
+    font-family: var(--mono);
+    font-size: .7rem;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: var(--muted);
   }
-  .tl-card:hover { border-color: rgba(0, 230, 118, .4); box-shadow: var(--glow); }
-  .tl-card .period { font-family: var(--font-mono); font-size: .68rem; letter-spacing: .12em; color: var(--accent); }
-  .tl-card h3 { font-size: 1.08rem; font-weight: 700; margin: 4px 0 2px; }
-  .tl-card .company { font-size: .88rem; color: var(--accent-2); font-weight: 500; margin-bottom: 12px; }
-  .tl-card .company small { color: var(--muted); font-weight: 400; }
-  .tl-card ul li {
+  .job h3 { margin: 4px 0 2px; font-size: 1.05rem; font-weight: 600; }
+  .job .company { margin: 0 0 10px; font-size: .88rem; color: var(--accent); }
+  .job .company small { color: var(--muted); font-weight: 400; }
+  .job ul li {
     position: relative;
-    padding-left: 18px;
+    padding-left: 16px;
+    margin-bottom: 5px;
+    font-size: .9rem;
     color: var(--text-2);
-    font-size: .88rem;
-    margin-bottom: 6px;
   }
-  .tl-card ul li::before { content: '▸'; position: absolute; left: 0; color: var(--accent); }
+  .job ul li::before {
+    content: "–";
+    position: absolute;
+    left: 0;
+    color: var(--muted);
+  }
 
   /* ---------- SKILLS ---------- */
-  .skills-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
-  .skill-card {
-    background: var(--panel);
-    border: 1px solid var(--line);
-    border-radius: var(--radius);
-    padding: 24px;
-    transition: .25s;
+  .skills { display: grid; grid-template-columns: repeat(3, 1fr); gap: 26px 32px; }
+  .skill h3 {
+    margin: 0 0 10px;
+    padding-bottom: 8px;
+    font-size: .84rem;
+    font-weight: 600;
+    letter-spacing: .02em;
+    text-transform: uppercase;
+    color: var(--text);
+    border-bottom: 1px solid var(--border-soft);
   }
-  .skill-card:hover { border-color: rgba(0, 230, 118, .4); transform: translateY(-3px); box-shadow: var(--glow); }
-  .skill-card .icon { font-size: 1.3rem; color: var(--accent); margin-bottom: 12px; }
-  .skill-card h3 { font-size: .92rem; letter-spacing: .04em; margin-bottom: 12px; }
-  .skill-card .chips { display: flex; flex-wrap: wrap; gap: 6px; }
-  .skill-card .chips span {
-    font-family: var(--font-mono);
-    font-size: .64rem;
+  .skill .tags { display: flex; flex-wrap: wrap; gap: 6px; }
+  .skill .tags span {
+    font-size: .78rem;
     color: var(--text-2);
-    border: 1px solid var(--line);
-    border-radius: 5px;
-    padding: 4px 9px;
-  }
-
-  /* ---------- CERTIFICATIONS ---------- */
-  .cert-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-  .cert {
-    background: var(--panel);
-    border: 1px solid var(--line);
-    border-radius: var(--radius);
-    overflow: hidden;
-    cursor: zoom-in;
-    transition: .25s;
-    display: flex;
-    flex-direction: column;
-  }
-  .cert:hover { border-color: rgba(0, 230, 118, .45); transform: translateY(-4px); box-shadow: var(--glow); }
-  .cert .thumb {
-    position: relative;
-    aspect-ratio: 4 / 3;
-    background: #0e1810;
-    border-bottom: 1px solid var(--line);
-    overflow: hidden;
-  }
-  .cert .thumb img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    padding: 14px;
-    transition: transform .4s;
-  }
-  .cert:hover .thumb img { transform: scale(1.05); }
-  .cert .zoom {
-    position: absolute;
-    right: 10px;
-    bottom: 10px;
-    font-family: var(--font-mono);
-    font-size: .62rem;
-    color: var(--accent);
-    background: rgba(5, 9, 6, .85);
-    border: 1px solid var(--line);
+    background: var(--surface);
+    border: 1px solid var(--border);
     border-radius: 4px;
     padding: 3px 8px;
-    opacity: 0;
-    transition: .2s;
   }
-  .cert:hover .zoom { opacity: 1; }
-  .cert .body { padding: 16px 18px 18px; display: flex; flex-direction: column; gap: 3px; }
-  .cert .body h3 { font-size: 1rem; font-weight: 700; }
-  .cert .body .full { font-size: .8rem; color: var(--text-2); }
-  .cert .body .org { font-family: var(--font-mono); font-size: .66rem; color: var(--muted); }
 
-  /* ---------- EDUCATION ---------- */
-  .edu-grid { display: grid; grid-template-columns: 1fr; gap: 18px; }
-  .edu-card {
-    background: var(--panel);
-    border: 1px solid var(--line);
-    border-radius: var(--radius);
-    padding: 24px;
-    transition: .25s;
+  /* ---------- CERTIFICAÇÕES ---------- */
+  .certs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  .cert {
+    margin: 0;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: zoom-in;
   }
-  .edu-card:hover { border-color: rgba(0, 230, 118, .4); }
-  .edu-card .kind { font-family: var(--font-mono); font-size: .66rem; letter-spacing: .12em; color: var(--accent); text-transform: uppercase; }
-  .edu-card h3 { font-size: 1.02rem; font-weight: 700; margin: 8px 0 2px; }
-  .edu-card .inst { color: var(--accent-2); font-size: .86rem; }
+  .cert:hover { border-color: var(--accent-dim); }
+  .cert .thumb { aspect-ratio: 4 / 3; background: #0a0e0c; border-bottom: 1px solid var(--border-soft); }
+  .cert .thumb img { width: 100%; height: 100%; object-fit: contain; padding: 12px; }
+  .cert figcaption { padding: 12px 14px 14px; }
+  .cert figcaption strong { display: block; font-size: .95rem; font-weight: 700; }
+  .cert figcaption .full { display: block; font-size: .8rem; color: var(--text-2); }
+  .cert figcaption .org { display: block; margin-top: 4px; font-family: var(--mono); font-size: .68rem; color: var(--muted); }
 
-  /* ---------- ACHIEVEMENTS ---------- */
-  .ach-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+  /* ---------- FORMAÇÃO ---------- */
+  .edu {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 20px 22px;
+  }
+  .edu .kind {
+    font-family: var(--mono);
+    font-size: .7rem;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  .edu h3 { margin: 6px 0 2px; font-size: 1.05rem; font-weight: 600; }
+  .edu p { margin: 0; font-size: .88rem; color: var(--accent); }
+
+  /* ---------- CONQUISTAS ---------- */
+  .achievements { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
   .ach {
     display: flex;
     align-items: center;
-    gap: 20px;
-    background: var(--panel);
-    border: 1px solid var(--line);
-    border-radius: var(--radius);
-    padding: 26px;
+    gap: 18px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 20px 22px;
   }
-  .ach .pos { font-family: var(--font-display); font-size: 2.6rem; font-weight: 700; color: var(--accent); line-height: 1; }
-  .ach .pos small { display: block; font-family: var(--font-mono); font-size: .62rem; letter-spacing: .16em; color: var(--muted); text-transform: uppercase; }
-  .ach .desc { font-size: .94rem; font-weight: 600; }
+  .ach .pos { font-size: 2rem; font-weight: 700; color: var(--accent); line-height: 1; }
+  .ach .pos small {
+    display: block;
+    margin-top: 4px;
+    font-family: var(--mono);
+    font-size: .64rem;
+    font-weight: 400;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  .ach .desc { font-size: .9rem; font-weight: 600; }
 
   /* ---------- CVEs ---------- */
-  .cve-list { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .cves { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
   .cve {
     display: flex;
     align-items: center;
     gap: 14px;
-    background: var(--panel);
-    border: 1px solid var(--line);
-    border-radius: var(--radius);
-    padding: 16px 18px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 13px 16px;
   }
   .cve code {
-    font-family: var(--font-mono);
-    font-size: .74rem;
+    font-family: var(--mono);
+    font-size: .76rem;
     color: var(--accent);
-    background: var(--panel-2);
-    border: 1px solid var(--line);
-    border-radius: 6px;
-    padding: 5px 10px;
     white-space: nowrap;
   }
   .cve a:hover code { text-decoration: underline; }
   .cve .info { font-size: .84rem; color: var(--text-2); }
-  .cve .info small { display: block; font-size: .7rem; color: var(--muted); }
 
-  /* ---------- CONTACT ---------- */
-  .contact-box {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 16px;
-    justify-content: center;
-  }
-  .contact-link {
+  /* ---------- CONTATO ---------- */
+  .contact a {
     display: inline-flex;
     align-items: center;
-    gap: 14px;
-    background: var(--panel);
-    border: 1px solid var(--line);
-    border-radius: var(--radius);
-    padding: 18px 28px;
-    font-family: var(--font-mono);
-    font-size: .8rem;
-    font-weight: 600;
-    letter-spacing: .08em;
-    transition: .25s;
-  }
-  .contact-link:hover { border-color: var(--accent); color: var(--accent); box-shadow: var(--glow); }
-  .contact-link .ic {
-    width: 42px; height: 42px;
-    display: flex; align-items: center; justify-content: center;
+    gap: 10px;
+    font-size: .95rem;
     font-weight: 600;
     color: var(--accent);
-    border: 1px solid var(--line);
-    border-radius: 10px;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 3px;
   }
+  .contact a:hover { border-color: var(--accent); }
 
-  /* ---------- FOOTER ---------- */
+  /* ---------- RODAPÉ ---------- */
   footer {
-    border-top: 1px solid var(--line-soft);
-    padding: 26px 0;
-    text-align: center;
-    font-family: var(--font-mono);
-    font-size: .68rem;
+    border-top: 1px solid var(--border-soft);
+    padding: 22px 0;
+  }
+  footer .wrap {
+    font-family: var(--mono);
+    font-size: .7rem;
     color: var(--muted);
+    text-align: center;
   }
 
   /* ---------- LIGHTBOX ---------- */
@@ -485,65 +345,60 @@
     position: fixed;
     inset: 0;
     z-index: 100;
-    background: rgba(3, 7, 4, .94);
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 40px;
+    padding: 32px;
+    background: rgba(6, 9, 8, .95);
     cursor: zoom-out;
   }
   .lightbox[hidden] { display: none; }
   .lightbox img {
-    max-width: min(92vw, 980px);
+    max-width: min(92vw, 960px);
     max-height: 86vh;
-    border-radius: 8px;
-    box-shadow: 0 30px 80px rgba(0, 0, 0, .7);
-    border: 1px solid var(--line);
+    border: 1px solid var(--border);
+    border-radius: 6px;
   }
   .lightbox .close {
     position: absolute;
-    top: 22px;
-    right: 28px;
-    font-size: 2rem;
-    color: var(--text);
-    cursor: pointer;
+    top: 18px;
+    right: 24px;
+    font-size: 1.8rem;
+    line-height: 1;
+    color: var(--text-2);
     background: none;
     border: 0;
-    line-height: 1;
+    cursor: pointer;
   }
   .lightbox .close:hover { color: var(--accent); }
 
-  /* ---------- REVEAL ---------- */
-  .reveal { opacity: 0; transform: translateY(22px); transition: opacity .6s ease, transform .6s ease; }
-  .reveal.visible { opacity: 1; transform: none; }
-
-  /* ---------- RESPONSIVE ---------- */
-  @media (max-width: 900px) {
-    .about-grid { grid-template-columns: 1fr; }
-    .skills-grid { grid-template-columns: 1fr 1fr; }
-    .cert-grid { grid-template-columns: 1fr 1fr; }
+  /* ---------- RESPONSIVO ---------- */
+  @media (max-width: 880px) {
+    .about { grid-template-columns: 1fr; gap: 30px; }
+    .skills, .certs { grid-template-columns: 1fr 1fr; }
   }
   @media (max-width: 640px) {
     .nav-links { display: none; }
-    .skills-grid, .cert-grid, .edu-grid, .ach-grid, .cve-list { grid-template-columns: 1fr; }
-    section { padding: 56px 0; }
+    .skills, .certs, .achievements, .cves { grid-template-columns: 1fr; }
+    section { padding: 48px 0; }
+    .hero { padding: 56px 0 44px; }
   }
 </style>
 </head>
 <body>
 
 <nav class="nav">
-  <div class="wrap nav-inner">
+  <div class="wrap">
     <div class="nav-right">
       <div class="nav-links">
-        <a href="#sobre" data-en="ABOUT" data-pt="SOBRE">SOBRE</a>
-        <a href="#experiencia" data-en="EXPERIENCE" data-pt="EXPERIÊNCIA">EXPERIÊNCIA</a>
-        <a href="#skills" data-en="SKILLS" data-pt="SKILLS">SKILLS</a>
-        <a href="#certificacoes" data-en="CERTIFICATIONS" data-pt="CERTIFICAÇÕES">CERTIFICAÇÕES</a>
-        <a href="#contato" data-en="CONTACT" data-pt="CONTATO">CONTATO</a>
+        <a href="#sobre" data-en="About" data-pt="Sobre">Sobre</a>
+        <a href="#experiencia" data-en="Experience" data-pt="Experiência">Experiência</a>
+        <a href="#skills">Skills</a>
+        <a href="#certificacoes" data-en="Certifications" data-pt="Certificações">Certificações</a>
+        <a href="#contato" data-en="Contact" data-pt="Contato">Contato</a>
       </div>
-      <button id="lang-toggle" class="lang-toggle" type="button" aria-label="Trocar idioma / Switch language">
-        <span class="opt" data-lang="en">EN</span><span class="sep">/</span><span class="opt active" data-lang="pt">PT</span>
+      <button id="lang-toggle" class="lang" type="button" aria-label="Trocar idioma / Switch language">
+        <span class="opt" data-lang="en">EN</span><span class="sep">/</span><span class="opt on" data-lang="pt">PT</span>
       </button>
     </div>
   </div>
@@ -551,13 +406,14 @@
 
 <header class="hero" id="topo">
   <div class="wrap">
-    <span class="tag"><span class="dot"></span> Red Team · Pentest</span>
-    <h1>Eduardo M. <span class="accent">Schwarz</span></h1>
-    <p class="sub" data-en="Offensive Security Analyst focused on Red Team and penetration testing across web, mobile, APIs and Active Directory."
+    <p class="eyebrow">Red Team · Pentest</p>
+    <h1>Eduardo M. <em>Schwarz</em></h1>
+    <p class="lead"
+       data-en="Offensive Security Analyst focused on Red Team and penetration testing across web, mobile, APIs and Active Directory."
        data-pt="Analista de Segurança Ofensiva com foco em Red Team e pentests em aplicações web, mobile, APIs e Active Directory.">Analista de Segurança Ofensiva com foco em Red Team e pentests em aplicações web, mobile, APIs e Active Directory.</p>
-    <div class="hero-actions">
-      <a href="#certificacoes" class="btn btn-primary" data-en="VIEW CERTIFICATIONS" data-pt="VER CERTIFICAÇÕES">VER CERTIFICAÇÕES</a>
-      <a href="https://www.linkedin.com/in/eduardo-schwarz-8856bb2a3/" class="btn btn-ghost" target="_blank" rel="noopener">LINKEDIN</a>
+    <div class="actions">
+      <a href="#certificacoes" class="btn btn-primary" data-en="View certifications" data-pt="Ver certificações">Ver certificações</a>
+      <a href="https://www.linkedin.com/in/eduardo-schwarz-8856bb2a3/" class="btn btn-ghost" target="_blank" rel="noopener">LinkedIn</a>
     </div>
   </div>
 </header>
@@ -565,121 +421,106 @@
 <main>
   <section id="sobre">
     <div class="wrap">
-      <div class="about-grid">
-        <div class="reveal">
-          <div class="section-head">
-            <span class="kicker" data-en="// About me" data-pt="// Sobre mim">// Sobre mim</span>
-            <h2 data-en="Offensive security professional" data-pt="Profissional de segurança ofensiva">Profissional de segurança ofensiva</h2>
-          </div>
-          <p data-en="I'm a Security Analyst based in Recife, Brazil. I currently work at Sicoob as a member of the Red Team and penetration testing teams, with extensive experience validating web applications, mobile, APIs and Active Directory, following the MITRE ATT&CK, PTES and OWASP WSTG methodologies."
-             data-pt="Sou um Analista de Segurança baseado em Recife, Brasil. Atualmente, trabalho no Sicoob como membro das equipes de Red Team e testes de intrusão (pentest), possuindo vasta experiência na validação de aplicações web, mobile, APIs e Active Directory, seguindo as metodologias MITRE ATT&CK, PTES e OWASP WSTG.">Sou um Analista de Segurança baseado em Recife, Brasil. Atualmente, trabalho no Sicoob como membro das equipes de Red Team e testes de intrusão (pentest), possuindo vasta experiência na validação de aplicações web, mobile, APIs e Active Directory, seguindo as metodologias MITRE ATT&CK, PTES e OWASP WSTG.</p>
-          <p data-en="I started my career in the Brazilian Armed Forces, serving eight years as an IT analyst, managing networks, assets and access control; over the years, my work expanded to include offensive security, performing penetration tests on web applications, APIs and infrastructure."
-             data-pt="Comecei minha carreira nas Forças Armadas brasileiras, servindo por oito anos como analista de TI, atuando na gestão de redes, ativos e controle de acesso; ao longo dos anos, meu trabalho se expandiu para incluir segurança ofensiva, realizando testes de intrusão em aplicações web, APIs e infraestrutura.">Comecei minha carreira nas Forças Armadas brasileiras, servindo por oito anos como analista de TI, atuando na gestão de redes, ativos e controle de acesso; ao longo dos anos, meu trabalho se expandiu para incluir segurança ofensiva, realizando testes de intrusão em aplicações web, APIs e infraestrutura.</p>
-          <p data-en="I hold a degree in Digital Security from UNINASSAU and stay current through certifications and continuous study in offensive security."
-             data-pt="Sou graduado em Digital Security pela UNINASSAU e sigo me atualizando com certificações e estudo contínuo em segurança ofensiva.">Sou graduado em Digital Security pela UNINASSAU e sigo me atualizando com certificações e estudo contínuo em segurança ofensiva.</p>
+      <div class="head">
+        <span class="kicker" data-en="// About" data-pt="// Sobre">// Sobre</span>
+        <h2 data-en="Who I am" data-pt="Quem sou">Quem sou</h2>
+      </div>
+      <div class="about">
+        <div>
+          <p data-en="I'm a security analyst based in Recife. I work on Red Team and penetration testing across web, mobile, APIs and Active Directory, mostly following MITRE ATT&amp;CK, PTES and OWASP WSTG."
+             data-pt="Sou analista de segurança baseado em Recife. Trabalho com Red Team e testes de intrusão em aplicações web, mobile, APIs e Active Directory, sempre com base em metodologias como MITRE ATT&amp;CK, PTES e OWASP WSTG.">Sou analista de segurança baseado em Recife. Trabalho com Red Team e testes de intrusão em aplicações web, mobile, APIs e Active Directory, sempre com base em metodologias como MITRE ATT&amp;CK, PTES e OWASP WSTG.</p>
+          <p data-en="I spent eight years as an IT analyst in the Brazilian Armed Forces, handling networks, assets and access control. That's where I got into offensive security, and I ended up moving into pentesting web apps, APIs and infrastructure."
+             data-pt="Passei oito anos como analista de TI nas Forças Armadas, cuidando de rede, ativos e controle de acesso. Foi ali que comecei a me interessar por segurança ofensiva e acabei migrando para o pentest em aplicações web, APIs e infraestrutura.">Passei oito anos como analista de TI nas Forças Armadas, cuidando de rede, ativos e controle de acesso. Foi ali que comecei a me interessar por segurança ofensiva e acabei migrando para o pentest em aplicações web, APIs e infraestrutura.</p>
+          <p data-en="Degree in Digital Security from UNINASSAU. I keep studying and renewing certifications."
+             data-pt="Formado em Digital Security pela UNINASSAU, sigo estudando e renovando certificações.">Formado em Digital Security pela UNINASSAU, sigo estudando e renovando certificações.</p>
         </div>
-        <div class="focus-card reveal">
-          <h3 data-en="Focus areas" data-pt="Foco de atuação">Foco de atuação</h3>
-          <ul>
-            <li><span data-en="Role" data-pt="Cargo">Cargo</span><b data-en="Offensive Security Analyst" data-pt="Analista de Segurança Ofensiva">Analista de Segurança Ofensiva</b></li>
-            <li><span data-en="Location" data-pt="Local">Local</span><b data-en="Recife, PE — Brazil" data-pt="Recife, PE — Brasil">Recife, PE — Brasil</b></li>
-            <li><span>Web / Mobile</span><b data-en="Application pentesting" data-pt="Pentest de aplicações">Pentest de aplicações</b></li>
-            <li><span>APIs</span><b data-en="API security" data-pt="Segurança de APIs">Segurança de APIs</b></li>
-            <li><span>Active Directory</span><b data-en="Domain attacks" data-pt="Ataques e domínio">Ataques e domínio</b></li>
-            <li><span data-en="Languages" data-pt="Idiomas">Idiomas</span><b data-en="PT (native) · EN (technical)" data-pt="PT (nativo) · EN (técnico)">PT (nativo) · EN (técnico)</b></li>
-          </ul>
-        </div>
+        <dl class="facts">
+          <div><dt data-en="Role" data-pt="Cargo">Cargo</dt><dd data-en="Offensive Security Analyst" data-pt="Analista de Segurança Ofensiva">Analista de Segurança Ofensiva</dd></div>
+          <div><dt data-en="Location" data-pt="Local">Local</dt><dd data-en="Recife, PE — Brazil" data-pt="Recife, PE — Brasil">Recife, PE — Brasil</dd></div>
+          <div><dt>Web / Mobile</dt><dd data-en="Application pentesting" data-pt="Pentest de aplicações">Pentest de aplicações</dd></div>
+          <div><dt>APIs</dt><dd data-en="API security" data-pt="Segurança de APIs">Segurança de APIs</dd></div>
+          <div><dt>Active Directory</dt><dd data-en="Domain attacks" data-pt="Ataques e domínio">Ataques e domínio</dd></div>
+          <div><dt data-en="Languages" data-pt="Idiomas">Idiomas</dt><dd data-en="PT (native) · EN (technical)" data-pt="PT (nativo) · EN (técnico)">PT (nativo) · EN (técnico)</dd></div>
+        </dl>
       </div>
     </div>
   </section>
 
   <section id="experiencia" class="alt">
     <div class="wrap">
-      <div class="section-head reveal">
+      <div class="head">
         <span class="kicker" data-en="// Career" data-pt="// Trajetória">// Trajetória</span>
         <h2 data-en="Professional experience" data-pt="Experiência profissional">Experiência profissional</h2>
       </div>
 
       <div class="timeline">
-        <div class="tl-item reveal">
-          <div class="tl-card">
-            <span class="period" data-en="JAN 2025 — PRESENT" data-pt="JAN 2025 — ATUAL">JAN 2025 — ATUAL</span>
-            <h3 data-en="Senior Offensive Security Analyst" data-pt="Analista de Segurança Ofensiva Sênior">Analista de Segurança Ofensiva Sênior</h3>
-            <p class="company">Sicoob — Red Team / Pentest <small data-en="· Brasília, DF · Remote" data-pt="· Brasília, DF · Remoto">· Brasília, DF · Remoto</small></p>
-            <ul>
-              <li data-en="Penetration testing across web, mobile and Active Directory." data-pt="Pentest em aplicações web, mobile e Active Directory.">Pentest em aplicações web, mobile e Active Directory.</li>
-              <li data-en="Executive reports evidencing the real business impact of findings." data-pt="Relatórios executivos evidenciando o impacto real das falhas para o negócio.">Relatórios executivos evidenciando o impacto real das falhas para o negócio.</li>
-              <li data-en="Red Team operations simulating real-world attack scenarios." data-pt="Operações de Red Team simulando cenários de ataque reais.">Operações de Red Team simulando cenários de ataque reais.</li>
-              <li data-en="Alignment with business areas to treat vulnerabilities and define fixes." data-pt="Alinhamento com as áreas para tratar vulnerabilidades e definir correções.">Alinhamento com as áreas para tratar vulnerabilidades e definir correções.</li>
-              <li data-en="Monitoring and response to tickets." data-pt="Monitoramento e resposta a chamados.">Monitoramento e resposta a chamados.</li>
-              <li data-en="Documented vulnerability report for technical teams to apply the fixes." data-pt="Reporte documentado de vulnerabilidades para as áreas técnicas aplicarem as correções.">Reporte documentado de vulnerabilidades para as áreas técnicas aplicarem as correções.</li>
-            </ul>
-          </div>
-        </div>
+        <article class="job">
+          <span class="period" data-en="Jan 2025 — Present" data-pt="Jan 2025 — Atual">Jan 2025 — Atual</span>
+          <h3 data-en="Senior Offensive Security Analyst" data-pt="Analista de Segurança Ofensiva Sênior">Analista de Segurança Ofensiva Sênior</h3>
+          <p class="company">Sicoob — Red Team / Pentest <small data-en="· Brasília, DF · Remote" data-pt="· Brasília, DF · Remoto">· Brasília, DF · Remoto</small></p>
+          <ul>
+            <li data-en="Penetration testing across web, mobile and Active Directory." data-pt="Pentest em aplicações web, mobile e Active Directory.">Pentest em aplicações web, mobile e Active Directory.</li>
+            <li data-en="Executive reports evidencing the real business impact of findings." data-pt="Relatórios executivos evidenciando o impacto real das falhas para o negócio.">Relatórios executivos evidenciando o impacto real das falhas para o negócio.</li>
+            <li data-en="Red Team operations simulating real-world attack scenarios." data-pt="Operações de Red Team simulando cenários de ataque reais.">Operações de Red Team simulando cenários de ataque reais.</li>
+            <li data-en="Alignment with business areas to treat vulnerabilities and define fixes." data-pt="Alinhamento com as áreas para tratar vulnerabilidades e definir correções.">Alinhamento com as áreas para tratar vulnerabilidades e definir correções.</li>
+            <li data-en="Monitoring and response to tickets." data-pt="Monitoramento e resposta a chamados.">Monitoramento e resposta a chamados.</li>
+            <li data-en="Documented vulnerability report for technical teams to apply the fixes." data-pt="Reporte documentado de vulnerabilidades para as áreas técnicas aplicarem as correções.">Reporte documentado de vulnerabilidades para as áreas técnicas aplicarem as correções.</li>
+          </ul>
+        </article>
 
-        <div class="tl-item reveal">
-          <div class="tl-card">
-            <span class="period" data-en="FEB 2022 — DEC 2024" data-pt="FEV 2022 — DEZ 2024">FEV 2022 — DEZ 2024</span>
-            <h3 data-en="Offensive Security Analyst" data-pt="Analista de Segurança Ofensiva">Analista de Segurança Ofensiva</h3>
-            <p class="company" data-en="Brazilian Army" data-pt="Exército Brasileiro">Exército Brasileiro</p>
-            <ul>
-              <li data-en="Security testing across web applications, APIs and infrastructure." data-pt="Testes de segurança em aplicações web, APIs e infraestrutura.">Testes de segurança em aplicações web, APIs e infraestrutura.</li>
-            </ul>
-          </div>
-        </div>
+        <article class="job">
+          <span class="period" data-en="Feb 2022 — Dec 2024" data-pt="Fev 2022 — Dez 2024">Fev 2022 — Dez 2024</span>
+          <h3 data-en="Offensive Security Analyst" data-pt="Analista de Segurança Ofensiva">Analista de Segurança Ofensiva</h3>
+          <p class="company" data-en="Brazilian Army" data-pt="Exército Brasileiro">Exército Brasileiro</p>
+          <ul>
+            <li data-en="Security testing across web applications, APIs and infrastructure." data-pt="Testes de segurança em aplicações web, APIs e infraestrutura.">Testes de segurança em aplicações web, APIs e infraestrutura.</li>
+          </ul>
+        </article>
 
-        <div class="tl-item reveal">
-          <div class="tl-card">
-            <span class="period" data-en="DEC 2016 — JAN 2022" data-pt="DEZ 2016 — JAN 2022">DEZ 2016 — JAN 2022</span>
-            <h3 data-en="IT Analyst" data-pt="Analista de TI">Analista de TI</h3>
-            <p class="company" data-en="Brazilian Army" data-pt="Exército Brasileiro">Exército Brasileiro</p>
-            <ul>
-              <li data-en="Administration and technical support of the unit's network infrastructure and IT assets." data-pt="Administração e suporte técnico da infraestrutura de rede e ativos de TI da unidade.">Administração e suporte técnico da infraestrutura de rede e ativos de TI da unidade.</li>
-              <li data-en="Identity management and user access control to internal systems." data-pt="Gestão de identidades e controle de acesso de usuários aos sistemas internos.">Gestão de identidades e controle de acesso de usuários aos sistemas internos.</li>
-            </ul>
-          </div>
-        </div>
+        <article class="job">
+          <span class="period" data-en="Dec 2016 — Jan 2022" data-pt="Dez 2016 — Jan 2022">Dez 2016 — Jan 2022</span>
+          <h3 data-en="IT Analyst" data-pt="Analista de TI">Analista de TI</h3>
+          <p class="company" data-en="Brazilian Army" data-pt="Exército Brasileiro">Exército Brasileiro</p>
+          <ul>
+            <li data-en="Administration and technical support of the unit's network infrastructure and IT assets." data-pt="Administração e suporte técnico da infraestrutura de rede e ativos de TI da unidade.">Administração e suporte técnico da infraestrutura de rede e ativos de TI da unidade.</li>
+            <li data-en="Identity management and user access control to internal systems." data-pt="Gestão de identidades e controle de acesso de usuários aos sistemas internos.">Gestão de identidades e controle de acesso de usuários aos sistemas internos.</li>
+          </ul>
+        </article>
       </div>
     </div>
   </section>
 
   <section id="skills">
     <div class="wrap">
-      <div class="section-head reveal">
+      <div class="head">
         <span class="kicker" data-en="// Skills" data-pt="// Competências">// Competências</span>
         <h2>Skills</h2>
       </div>
 
-      <div class="skills-grid">
-        <div class="skill-card reveal">
-          <div class="icon">◈</div>
+      <div class="skills">
+        <div class="skill">
           <h3>Red Team &amp; Pentest</h3>
-          <div class="chips"><span>Red Team</span><span>Pentest</span><span data-en="Social Engineering" data-pt="Engenharia Social">Engenharia Social</span><span>OSINT</span><span data-en="Vulnerability Analysis" data-pt="Análise de Vulnerabilidade">Análise de Vulnerabilidade</span></div>
+          <div class="tags"><span>Red Team</span><span>Pentest</span><span data-en="Social Engineering" data-pt="Engenharia Social">Engenharia Social</span><span>OSINT</span><span data-en="Vulnerability Analysis" data-pt="Análise de Vulnerabilidade">Análise de Vulnerabilidade</span></div>
         </div>
-        <div class="skill-card reveal">
-          <div class="icon">⬡</div>
+        <div class="skill">
           <h3>Web &amp; API</h3>
-          <div class="chips"><span data-en="Web Pentest" data-pt="Pentest Web">Pentest Web</span><span>Burp Suite</span><span>OWASP WSTG</span></div>
+          <div class="tags"><span data-en="Web Pentest" data-pt="Pentest Web">Pentest Web</span><span>Burp Suite</span><span>OWASP WSTG</span></div>
         </div>
-        <div class="skill-card reveal">
-          <div class="icon">▣</div>
+        <div class="skill">
           <h3>Mobile</h3>
-          <div class="chips"><span>Android</span><span>OWASP MASTG</span></div>
+          <div class="tags"><span>Android</span><span>OWASP MASTG</span></div>
         </div>
-        <div class="skill-card reveal">
-          <div class="icon">◉</div>
+        <div class="skill">
           <h3 data-en="Active Directory &amp; Networks" data-pt="Active Directory &amp; Redes">Active Directory &amp; Redes</h3>
-          <div class="chips"><span>Active Directory</span><span>TCP/IP</span><span data-en="Computer Networks" data-pt="Redes de Computadores">Redes de Computadores</span><span data-en="Systems Administration" data-pt="Administração de Sistemas">Administração de Sistemas</span></div>
+          <div class="tags"><span>Active Directory</span><span>TCP/IP</span><span data-en="Computer Networks" data-pt="Redes de Computadores">Redes de Computadores</span><span data-en="Systems Administration" data-pt="Administração de Sistemas">Administração de Sistemas</span></div>
         </div>
-        <div class="skill-card reveal">
-          <div class="icon">⚙</div>
+        <div class="skill">
           <h3 data-en="Tools &amp; Automation" data-pt="Ferramentas &amp; Automação">Ferramentas &amp; Automação</h3>
-          <div class="chips"><span>Python</span><span>Shell Script</span><span>Linux</span></div>
+          <div class="tags"><span>Python</span><span>Shell Script</span><span>Linux</span></div>
         </div>
-        <div class="skill-card reveal">
-          <div class="icon">✦</div>
+        <div class="skill">
           <h3>Soft Skills</h3>
-          <div class="chips"><span data-en="Teamwork" data-pt="Trabalho em Equipe">Trabalho em Equipe</span><span data-en="Leadership" data-pt="Liderança">Liderança</span><span data-en="Decision Making" data-pt="Tomada de Decisões">Tomada de Decisões</span><span data-en="Resilience" data-pt="Resiliência">Resiliência</span><span data-en="Proactivity" data-pt="Proatividade">Proatividade</span><span data-en="Business Vision" data-pt="Visão de Negócio">Visão de Negócio</span></div>
+          <div class="tags"><span data-en="Teamwork" data-pt="Trabalho em Equipe">Trabalho em Equipe</span><span data-en="Leadership" data-pt="Liderança">Liderança</span><span data-en="Decision Making" data-pt="Tomada de Decisões">Tomada de Decisões</span><span data-en="Resilience" data-pt="Resiliência">Resiliência</span><span data-en="Proactivity" data-pt="Proatividade">Proatividade</span><span data-en="Business Vision" data-pt="Visão de Negócio">Visão de Negócio</span></div>
         </div>
       </div>
     </div>
@@ -687,148 +528,160 @@
 
   <section id="certificacoes" class="alt">
     <div class="wrap">
-      <div class="section-head reveal">
+      <div class="head">
         <span class="kicker" data-en="// Credentials" data-pt="// Credenciais">// Credenciais</span>
         <h2 data-en="Certifications" data-pt="Certificações">Certificações</h2>
       </div>
 
-      <div class="cert-grid">
-        <div class="cert reveal" data-src="assets/certificates/OSCP.jpeg">
-          <div class="thumb"><img src="assets/certificates/OSCP.jpeg" alt="OSCP — OffSec Certified Professional" loading="lazy"><span class="zoom">⤢</span></div>
-          <div class="body"><h3>OSCP</h3><span class="full">OffSec Certified Professional</span><span class="org">Offensive Security</span></div>
-        </div>
-        <div class="cert reveal" data-src="assets/certificates/CRTO.png">
-          <div class="thumb"><img src="assets/certificates/CRTO.png" alt="CRTO — Certified Red Team Operator" loading="lazy"><span class="zoom">⤢</span></div>
-          <div class="body"><h3>CRTO</h3><span class="full">Certified Red Team Operator</span><span class="org">Zero-Point Security</span></div>
-        </div>
-        <div class="cert reveal" data-src="assets/certificates/eWPTX.jpeg">
-          <div class="thumb"><img src="assets/certificates/eWPTX.jpeg" alt="eWPTX — Web Application Penetration Tester eXtreme" loading="lazy"><span class="zoom">⤢</span></div>
-          <div class="body"><h3>eWPTX</h3><span class="full">Web Application Penetration Tester eXtreme</span><span class="org">INE Security</span></div>
-        </div>
-        <div class="cert reveal" data-src="assets/certificates/eMAPT.jpeg">
-          <div class="thumb"><img src="assets/certificates/eMAPT.jpeg" alt="eMAPT — Mobile Application Penetration Tester" loading="lazy"><span class="zoom">⤢</span></div>
-          <div class="body"><h3>eMAPT</h3><span class="full">Mobile Application Penetration Tester</span><span class="org">INE Security</span></div>
-        </div>
-        <div class="cert reveal" data-src="assets/certificates/SCMP_A.jpeg">
-          <div class="thumb"><img src="assets/certificates/SCMP_A.jpeg" alt="SCMP|A — Sec4us Certified Mobile Pentester Android" loading="lazy"><span class="zoom">⤢</span></div>
-          <div class="body"><h3>SCMP|A</h3><span class="full">Sec4us Mobile Pentester Android</span><span class="org">Sec4us</span></div>
-        </div>
-        <div class="cert reveal" data-src="assets/certificates/DCPT.jpeg">
-          <div class="thumb"><img src="assets/certificates/DCPT.jpeg" alt="DCPT — Desec Certified Penetration Tester" loading="lazy"><span class="zoom">⤢</span></div>
-          <div class="body"><h3>DCPT</h3><span class="full">Desec Certified Penetration Tester</span><span class="org">Desec Security</span></div>
-        </div>
-        <div class="cert reveal" data-src="assets/certificates/SYCP.jpeg">
-          <div class="thumb"><img src="assets/certificates/SYCP.jpeg" alt="SYCP — Solyd Certified Pentester" loading="lazy"><span class="zoom">⤢</span></div>
-          <div class="body"><h3>SYCP</h3><span class="full">Solyd Certified Pentester</span><span class="org">Solyd Offensive Security</span></div>
-        </div>
+      <div class="certs">
+        <figure class="cert" data-src="assets/certificates/OSCP.jpeg" tabindex="0">
+          <div class="thumb"><img src="assets/certificates/OSCP.jpeg" alt="OSCP — OffSec Certified Professional" loading="lazy"></div>
+          <figcaption><strong>OSCP</strong><span class="full">OffSec Certified Professional</span><span class="org">Offensive Security</span></figcaption>
+        </figure>
+        <figure class="cert" data-src="assets/certificates/CRTO.png" tabindex="0">
+          <div class="thumb"><img src="assets/certificates/CRTO.png" alt="CRTO — Certified Red Team Operator" loading="lazy"></div>
+          <figcaption><strong>CRTO</strong><span class="full">Certified Red Team Operator</span><span class="org">Zero-Point Security</span></figcaption>
+        </figure>
+        <figure class="cert" data-src="assets/certificates/eWPTX.jpeg" tabindex="0">
+          <div class="thumb"><img src="assets/certificates/eWPTX.jpeg" alt="eWPTX — Web Application Penetration Tester eXtreme" loading="lazy"></div>
+          <figcaption><strong>eWPTX</strong><span class="full">Web Application Penetration Tester eXtreme</span><span class="org">INE Security</span></figcaption>
+        </figure>
+        <figure class="cert" data-src="assets/certificates/eMAPT.jpeg" tabindex="0">
+          <div class="thumb"><img src="assets/certificates/eMAPT.jpeg" alt="eMAPT — Mobile Application Penetration Tester" loading="lazy"></div>
+          <figcaption><strong>eMAPT</strong><span class="full">Mobile Application Penetration Tester</span><span class="org">INE Security</span></figcaption>
+        </figure>
+        <figure class="cert" data-src="assets/certificates/SCMP_A.jpeg" tabindex="0">
+          <div class="thumb"><img src="assets/certificates/SCMP_A.jpeg" alt="SCMP|A — Sec4us Certified Mobile Pentester Android" loading="lazy"></div>
+          <figcaption><strong>SCMP|A</strong><span class="full">Sec4us Mobile Pentester Android</span><span class="org">Sec4us</span></figcaption>
+        </figure>
+        <figure class="cert" data-src="assets/certificates/DCPT.jpeg" tabindex="0">
+          <div class="thumb"><img src="assets/certificates/DCPT.jpeg" alt="DCPT — Desec Certified Penetration Tester" loading="lazy"></div>
+          <figcaption><strong>DCPT</strong><span class="full">Desec Certified Penetration Tester</span><span class="org">Desec Security</span></figcaption>
+        </figure>
+        <figure class="cert" data-src="assets/certificates/SYCP.jpeg" tabindex="0">
+          <div class="thumb"><img src="assets/certificates/SYCP.jpeg" alt="SYCP — Solyd Certified Pentester" loading="lazy"></div>
+          <figcaption><strong>SYCP</strong><span class="full">Solyd Certified Pentester</span><span class="org">Solyd Offensive Security</span></figcaption>
+        </figure>
       </div>
     </div>
   </section>
 
   <section id="formacao">
     <div class="wrap">
-      <div class="section-head reveal">
+      <div class="head">
         <span class="kicker" data-en="// Education" data-pt="// Acadêmico">// Acadêmico</span>
         <h2 data-en="Education" data-pt="Formação">Formação</h2>
       </div>
-      <div class="edu-grid">
-        <div class="edu-card reveal">
-          <span class="kind" data-en="Technology degree (CST)" data-pt="Curso Superior de Tecnologia">Curso Superior de Tecnologia</span>
-          <h3>Digital Security</h3>
-          <p class="inst">UNINASSAU</p>
-        </div>
+      <div class="edu">
+        <span class="kind" data-en="Technology degree (CST)" data-pt="Curso Superior de Tecnologia">Curso Superior de Tecnologia</span>
+        <h3>Digital Security</h3>
+        <p>UNINASSAU</p>
       </div>
     </div>
   </section>
 
   <section id="conquistas" class="alt">
     <div class="wrap">
-      <div class="section-head reveal">
+      <div class="head">
         <span class="kicker" data-en="// Recognition" data-pt="// Reconhecimento">// Reconhecimento</span>
         <h2 data-en="CTF achievements" data-pt="Conquistas em CTF">Conquistas em CTF</h2>
       </div>
-      <div class="ach-grid">
-        <div class="ach reveal"><div class="pos"><span data-en="2nd" data-pt="2º">2º</span><small data-en="place" data-pt="lugar">lugar</small></div><div class="desc">FEBRABAN HACK THE BUNNY 2026</div></div>
-        <div class="ach reveal"><div class="pos"><span data-en="3rd" data-pt="3º">3º</span><small data-en="place" data-pt="lugar">lugar</small></div><div class="desc">FEBRABAN HO-HO HACK 2025</div></div>
+      <div class="achievements">
+        <div class="ach"><div class="pos"><span data-en="2nd" data-pt="2º">2º</span><small data-en="place" data-pt="lugar">lugar</small></div><div class="desc">FEBRABAN HACK THE BUNNY 2026</div></div>
+        <div class="ach"><div class="pos"><span data-en="3rd" data-pt="3º">3º</span><small data-en="place" data-pt="lugar">lugar</small></div><div class="desc">FEBRABAN HO-HO HACK 2025</div></div>
       </div>
     </div>
   </section>
 
   <section id="vulnerabilidades">
     <div class="wrap">
-      <div class="section-head reveal">
+      <div class="head">
         <span class="kicker" data-en="// Research" data-pt="// Pesquisa">// Pesquisa</span>
         <h2 data-en="Vulnerabilities (CVE)" data-pt="Vulnerabilidades (CVE)">Vulnerabilidades (CVE)</h2>
       </div>
-      <div class="cve-list">
-        <div class="cve reveal"><a href="https://www.cve.org/CVERecord?id=CVE-2025-9193" target="_blank" rel="noopener"><code>CVE-2025-9193</code></a><div class="info">Portal Meu RH — TOTVS</div></div>
-        <div class="cve reveal"><a href="https://www.cve.org/CVERecord?id=CVE-2025-57675" target="_blank" rel="noopener"><code>CVE-2025-57675</code></a><div class="info"><span data-en="Reserved" data-pt="Reservado">Reservado</span></div></div>
-        <div class="cve reveal"><a href="https://www.cve.org/CVERecord?id=CVE-2025-65874" target="_blank" rel="noopener"><code>CVE-2025-65874</code></a><div class="info"><span data-en="Reserved" data-pt="Reservado">Reservado</span></div></div>
-        <div class="cve reveal"><a href="https://www.cve.org/CVERecord?id=CVE-2025-67122" target="_blank" rel="noopener"><code>CVE-2025-67122</code></a><div class="info"><span data-en="Reserved" data-pt="Reservado">Reservado</span></div></div>
+      <div class="cves">
+        <div class="cve"><a href="https://www.cve.org/CVERecord?id=CVE-2025-9193" target="_blank" rel="noopener"><code>CVE-2025-9193</code></a><div class="info">Portal Meu RH — TOTVS</div></div>
+        <div class="cve"><a href="https://www.cve.org/CVERecord?id=CVE-2025-57675" target="_blank" rel="noopener"><code>CVE-2025-57675</code></a><div class="info" data-en="Reserved" data-pt="Reservado">Reservado</div></div>
+        <div class="cve"><a href="https://www.cve.org/CVERecord?id=CVE-2025-65874" target="_blank" rel="noopener"><code>CVE-2025-65874</code></a><div class="info" data-en="Reserved" data-pt="Reservado">Reservado</div></div>
+        <div class="cve"><a href="https://www.cve.org/CVERecord?id=CVE-2025-67122" target="_blank" rel="noopener"><code>CVE-2025-67122</code></a><div class="info" data-en="Reserved" data-pt="Reservado">Reservado</div></div>
       </div>
     </div>
   </section>
 
   <section id="contato" class="alt">
     <div class="wrap">
-      <div class="section-head reveal">
+      <div class="head">
         <span class="kicker" data-en="// Contact" data-pt="// Contato">// Contato</span>
         <h2 data-en="Let's talk" data-pt="Vamos conversar">Vamos conversar</h2>
       </div>
-      <div class="contact-box">
-        <a class="contact-link reveal" href="https://www.linkedin.com/in/eduardo-schwarz-8856bb2a3/" target="_blank" rel="noopener">
-          <span class="ic">in</span>
-          <span data-en="LinkedIn" data-pt="LinkedIn">LinkedIn</span>
-        </a>
+      <div class="contact">
+        <a href="https://www.linkedin.com/in/eduardo-schwarz-8856bb2a3/" target="_blank" rel="noopener">LinkedIn</a>
       </div>
     </div>
   </section>
 </main>
 
 <footer>
-  <div class="wrap" data-en="© 2026 Eduardo Marinho Schwarz — Offensive Security Analyst" data-pt="© 2026 Eduardo Marinho Schwarz — Analista de Segurança Ofensiva">© 2026 Eduardo Marinho Schwarz — Analista de Segurança Ofensiva</div>
+  <div class="wrap">
+    <span data-en="© 2026 Eduardo Marinho Schwarz — Offensive Security Analyst" data-pt="© 2026 Eduardo Marinho Schwarz — Analista de Segurança Ofensiva">© 2026 Eduardo Marinho Schwarz — Analista de Segurança Ofensiva</span>
+  </div>
 </footer>
 
 <div class="lightbox" id="lightbox" hidden>
-  <button class="close" aria-label="Fechar">×</button>
+  <button class="close" type="button" aria-label="Fechar">×</button>
   <img id="lightbox-img" src="" alt="Certificação">
 </div>
 
 <script>
-  // Language toggle
-  var currentLang = 'pt';
-  function setLang(lang) {
-    currentLang = lang;
-    document.documentElement.lang = lang === 'pt' ? 'pt-BR' : 'en';
+  // idioma
+  var lang = 'pt';
+
+  function setLang(next) {
+    lang = next;
+    document.documentElement.lang = next === 'pt' ? 'pt-BR' : 'en';
     document.querySelectorAll('[data-en][data-pt]').forEach(function (el) {
-      el.textContent = el.getAttribute(lang === 'pt' ? 'data-pt' : 'data-en');
+      el.textContent = el.getAttribute('data-' + next);
     });
-    document.querySelectorAll('.lang-toggle .opt').forEach(function (opt) {
-      opt.classList.toggle('active', opt.getAttribute('data-lang') === lang);
+    document.querySelectorAll('.lang .opt').forEach(function (opt) {
+      opt.classList.toggle('on', opt.getAttribute('data-lang') === next);
     });
   }
-  document.querySelectorAll('.lang-toggle .opt').forEach(function (opt) {
+
+  document.querySelectorAll('.lang .opt').forEach(function (opt) {
     opt.addEventListener('click', function () {
       setLang(opt.getAttribute('data-lang'));
     });
   });
   setLang('pt');
 
-  // Lightbox
+  // lightbox das certificações
   var lightbox = document.getElementById('lightbox');
   var lightboxImg = document.getElementById('lightbox-img');
-  document.querySelectorAll('.cert').forEach(function (card) {
-    card.addEventListener('click', function () {
-      lightboxImg.src = card.getAttribute('data-src');
-      lightbox.hidden = false;
-      document.body.style.overflow = 'hidden';
-    });
-  });
+
+  function openLightbox(src) {
+    lightboxImg.src = src;
+    lightbox.hidden = false;
+    document.body.style.overflow = 'hidden';
+  }
+
   function closeLightbox() {
     lightbox.hidden = true;
     lightboxImg.src = '';
     document.body.style.overflow = '';
   }
+
+  document.querySelectorAll('.cert').forEach(function (card) {
+    card.addEventListener('click', function () {
+      openLightbox(card.getAttribute('data-src'));
+    });
+    card.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        openLightbox(card.getAttribute('data-src'));
+      }
+    });
+  });
+
   lightbox.addEventListener('click', closeLightbox);
   document.querySelector('.lightbox .close').addEventListener('click', function (e) {
     e.stopPropagation();
@@ -836,19 +689,6 @@
   });
   document.addEventListener('keydown', function (e) {
     if (e.key === 'Escape') closeLightbox();
-  });
-
-  // Reveal on scroll
-  var observer = new IntersectionObserver(function (entries) {
-    entries.forEach(function (entry) {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.12 });
-  document.querySelectorAll('.reveal').forEach(function (el) {
-    observer.observe(el);
   });
 </script>
 </body>
